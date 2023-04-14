@@ -1,0 +1,17 @@
+{
+  "name": "tasksuite",
+  "version": "2.0.0",
+  "description": "TaskSuite Website redesign",
+  "main": "index.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "cd server && npm start",
+    "start:dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && gatsby clean && gatsby develop\"",
+    "install": "cd backend && npm i && cd ../frontend && npm i"
+  },
+  "author": "Chris Winters",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
